@@ -1,20 +1,22 @@
 A minimal (180kb) inferno environment to connect to 9p chats. (excluding inferno emulator binary)
 hubchat was stolen from henesy gridferno scripts
 
+Inspired by sigrid's 9gc
+
+How to use: 
 ```
 $ git clone https://github.com/metacoma/gridchat-inferno
 $ emu -r gridchat-inferno
 ```
 
-Inspired by sigrid's 9gc
 ```
 $ du -c -h dis lib
 56K	dis/lib
 20K	dis/ndb
 20K	dis/sh
-176K	dis/
+180K	dis/
 4,0K	lib/sh/profile
-180K	total
+184K	total
 ```
 
 ```shell
