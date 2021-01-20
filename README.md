@@ -9,6 +9,7 @@ $ git clone https://github.com/metacoma/gridchat-inferno
 $ emu -r gridchat-inferno
 ```
 
+```
 $ du -c -h dis lib
 64K	dis/lib
 20K	dis/ndb
@@ -18,6 +19,7 @@ $ du -c -h dis lib
 192K	total
 ```
 
+init script
 ```shell
 #!/dis/sh
 load std
