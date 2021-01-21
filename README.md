@@ -24,9 +24,21 @@ init script
 ```shell
 #!/dis/sh
 load std
+chat=$1
+user=$2
+
+if {~ $#chat 0} {
+  chat = 'chat'
+}
+
+if {~ $#user 0} {
+  user = 'inferno-guest'
+}
+
 FALLBACK_CHAT_DIALSTRING=tcp!chat.9p.zone!9990
 
-mkdir -p /mnt/registry /n/chat
+mkdir -p /mnt/registry /n/chat /lib/ndb
+touch /lib/ndb/local
 
 ndb/cs
 test -d /mnt/registry || mkdir /mnt/registry
@@ -38,14 +50,11 @@ if {~ $#CHAT_DIALSTRING 0} {
 }
 
 mount -A $CHAT_DIALSTRING /n/chat
-
-user = guest
-
-cat /n/chat/chat &
-# echo JOIN $user from Inferno! >>/n/chat/chat
+cat /n/chat/^$chat &
+#  echo JOIN $user from Inferno! >>/n/chat/^$chat
 # echo -n '> ' >[1=2]
 getlines{
 	echo $user → $line
-#	echo -n '> ' >[1=2]
-}>>/n/chat/chat
+##	echo -n '> ' >[1=2]
+}>>/n/chat/^$chat
 ```
