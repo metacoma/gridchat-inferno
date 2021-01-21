@@ -6,7 +6,8 @@ Inspired by sigrid's 9gc
 How to use: 
 ```
 $ git clone https://github.com/metacoma/gridchat-inferno
-$ emu -r gridchat-inferno
+# by default chan = chan, user = inferno-guest
+$ emu -r gridchat-inferno <chan> <user>
 ```
 
 ```
